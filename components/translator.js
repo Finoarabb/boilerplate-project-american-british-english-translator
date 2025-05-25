@@ -18,8 +18,8 @@ class Translator {
         : /\b(Mr|Mrs|Ms|Mx|Dr|Prof)\b/gi;
     let result = text.replace(reg, (match) => {
       if (locale === "american-to-british")
-        return `<span class='highlight'>${match.slice(0, -1)}</span>`;
-      else return `<span class='highlight'>${match}.</span>`;
+        return `<span class=\"highlight\">${match.slice(0, -1)}</span>`;
+      else return `<span class=\"highlight\">${match}.</span>`;
     });
     return result;
   }
@@ -30,8 +30,8 @@ class Translator {
         : /\b(\d{1,2})\.(\d{2})\b/g;
     let result = text.replace(reg, (match, p1, p2) => {
       if (locale === "american-to-british")
-        return `<span class='highlight'>${p1}.${p2}</span>`;
-      else return `<span class='highlight'>${p1}:${p2}</span>`;
+        return `<span class=\"highlight\">${p1}.${p2}</span>`;
+      else return `<span class=\"highlight\">${p1}:${p2}</span>`;
     });
     return result;
   }
@@ -44,7 +44,7 @@ class Translator {
     let result = text;
     for (const [key, value] of sortedTranslations) {
       const reg = new RegExp(`\\b${key}\\b`, 'gi');
-      result = result.replace(reg, `<span class='highlight'>${value}</span>`);
+      result = result.replace(reg, `<span class=\"highlight\">${value}</span>`);
     }
     return result;
   }
@@ -60,7 +60,7 @@ class Translator {
     );
     for (const [key, value] of sortedTranslations) {
       const reg = new RegExp(`\\b${key}\\b`, 'gi');
-      result = result.replace(reg, `<span class='highlight'>${value}</span>`);
+      result = result.replace(reg, `<span class=\"highlight\">${value}</span>`);
     }
     return result;
   }

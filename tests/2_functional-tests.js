@@ -17,7 +17,7 @@ suite("Functional Tests", () => {
       expected: {
         text: "We watched the footie match for a while.",
         translation:
-          "We watched the <span class='highlight'>soccer</span> match for a while.",
+          "We watched the <span class=\"highlight\">soccer</span> match for a while.",
       },
     },
     {
